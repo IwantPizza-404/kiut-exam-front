@@ -151,41 +151,39 @@ function onImageError(event) {
 
 <style scoped>
 .container {
-    background: rgba(255, 255, 255, 0.98);
+    background: white;
+    padding: 2rem;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     width: 90%;
-    max-width: 700px;
-    backdrop-filter: blur(10px);
-    position: relative;
+    max-width: 1200px;
+    animation: fadeIn 0.5s ease;
 }
 
 .header {
-    text-align: center;
-    margin-bottom: 30px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f0f0f0;
 }
 
 .logo {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #1976d2, #42a5f5);
-    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    font-size: 1.5rem;
     font-weight: bold;
-    font-size: 24px;
-    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.3);
+    color: white;
 }
 
 .header h1 {
-    color: #1976d2;
+    color: #667eea;
     font-size: 26px;
 }
 
@@ -207,79 +205,50 @@ function onImageError(event) {
     width: 60px;
     height: 60px;
     border: 4px solid #e3f2fd;
-    border-top: 4px solid #1976d2;
+    border-top: 4px solid #667eea;
     border-radius: 50%;
     animation: spin 1s linear infinite;
     margin-bottom: 20px;
 }
 
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.status-text {
-    color: #666;
-    font-size: 18px;
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
 }
 
 .student-info {
-    animation: fadeIn 0.5s ease-in;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.student-card {
-    background: linear-gradient(135deg, #f5f7fa 0%, #e3f2fd 100%);
+    background: white;
+    border: 2px solid #e0e0e0;
     border-radius: 15px;
-    padding: 30px;
-    margin-bottom: 20px;
-    border: 1px solid #bbdefb;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 0.5s ease-in;
 }
 
 .student-header {
     display: flex;
     align-items: center;
-    gap: 20px;
-    margin-bottom: 25px;
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 .student-photo {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
     object-fit: cover;
-    border: 4px solid white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 3px solid #f0f0f0;
 }
 
 .student-name {
-    flex: 1;
-}
-
-.student-name h2 {
+    font-size: 1.5rem;
     color: #333;
-    font-size: 24px;
-    margin-bottom: 5px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
 }
 
 .rfid-badge {
-    background: #1976d2;
+    background: #667eea;
     color: white;
     padding: 5px 15px;
     border-radius: 20px;
@@ -295,7 +264,7 @@ function onImageError(event) {
 }
 
 .info-item {
-    background: white;
+    background: #f8f9fa;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
@@ -357,29 +326,29 @@ function onImageError(event) {
 }
 
 .btn-reconnect {
-    background: #1976d2;
+    background: #667eea;
     color: white;
     padding: 8px 20px;
     font-size: 14px;
 }
 
 .btn-reconnect:hover:not(:disabled) {
-    background: #1565c0;
+    background: #764ba2;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(25, 118, 210, 0.3);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
 }
 
 .btn-logout {
-    background: #f44336;
+    background: #ff4757;
     color: white;
     padding: 8px 20px;
     font-size: 14px;
 }
 
 .btn-logout:hover {
-    background: #d32f2f;
+    background: #ff3838;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(244, 67, 54, 0.3);
+    box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3);
 }
 
 .btn:disabled {
@@ -388,73 +357,9 @@ function onImageError(event) {
     transform: none;
 }
 
-.auto-print-toggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logout-btn {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.user-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    font-size: 12px;
-}
-
-.username {
-    font-weight: bold;
-    color: #333;
-}
-
-.user-role {
-    color: #666;
-    text-transform: capitalize;
-}
-
-.toggle-switch {
-    position: relative;
-    width: 60px;
-    height: 30px;
-    background: #ccc;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.toggle-switch.active {
-    background: #2ecc71;
-}
-
-.toggle-slider {
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 24px;
-    height: 24px;
-    background: white;
-    border-radius: 50%;
-    transition: transform 0.3s;
-}
-
-.toggle-switch.active .toggle-slider {
-    transform: translateX(30px);
-}
-
 .error-message {
     background: #fee;
-    color: #c33;
+    color: #c00;
     padding: 15px;
     border-radius: 10px;
     text-align: center;
@@ -496,21 +401,13 @@ function onImageError(event) {
 }
 
 @keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.4);
-    }
-
-    70% {
-        box-shadow: 0 0 0 10px rgba(46, 204, 113, 0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
-    }
+    0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.4);}
+    70% { box-shadow: 0 0 0 10px rgba(46, 204, 113, 0);}
+    100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);}
 }
 
-.auto-print-label {
-    font-size: 14px;
-    color: #666;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
 }
 </style>

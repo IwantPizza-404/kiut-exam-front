@@ -24,14 +24,14 @@ const router = createRouter({
 // Navigation guards
 router.beforeEach(async (to, from, next) => {
   const authStore = useAuthStore()
-  
+
   if (to.meta.requiresAuth) {
     // Check if we have a token
     if (!authStore.accessToken) {
       next('/login')
       return
     }
-    
+
     // Verify token is still valid by getting user info
     if (!authStore.user) {
       const isAuthenticated = await authStore.getCurrentUser()
@@ -41,12 +41,12 @@ router.beforeEach(async (to, from, next) => {
       }
     }
   }
-  
+
   if (to.meta.requiresGuest && authStore.isAuthenticated) {
     next('/')
     return
   }
-  
+
   next()
 })
 
