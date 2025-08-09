@@ -64,24 +64,19 @@ async function handleLogin() {
 
 <style scoped>
 .login-container {
-    background: rgba(255, 255, 255, 0.98);
+    background: white;
+    padding: 2.5rem;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    padding: 40px;
-    width: 90%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    width: 100%;
     max-width: 400px;
-    backdrop-filter: blur(10px);
-}
-
-.login-header {
-    text-align: center;
-    margin-bottom: 30px;
+    animation: fadeIn 0.5s ease;
 }
 
 .logo {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #1976d2, #42a5f5);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -89,12 +84,12 @@ async function handleLogin() {
     color: white;
     font-weight: bold;
     font-size: 32px;
-    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.3);
+    box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
     margin: 0 auto 20px;
 }
 
 .login-header h1 {
-    color: #1976d2;
+    color: #667eea;
     font-size: 24px;
     margin-bottom: 5px;
 }
@@ -110,7 +105,7 @@ async function handleLogin() {
 
 .form-label {
     display: block;
-    color: #666;
+    color: #555;
     font-size: 14px;
     margin-bottom: 8px;
     font-weight: 500;
@@ -128,15 +123,15 @@ async function handleLogin() {
 
 .form-input:focus {
     outline: none;
-    border-color: #1976d2;
+    border-color: #667eea;
     background: white;
-    box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
 .btn-login {
     width: 100%;
     padding: 14px;
-    background: #1976d2;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border: none;
     border-radius: 10px;
@@ -149,9 +144,9 @@ async function handleLogin() {
 }
 
 .btn-login:hover:not(:disabled) {
-    background: #1565c0;
+    background: #764ba2;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(25, 118, 210, 0.3);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
 }
 
 .btn-login:disabled {
@@ -162,7 +157,7 @@ async function handleLogin() {
 
 .error-message {
     background: #fee;
-    color: #c33;
+    color: #c00;
     padding: 12px;
     border-radius: 8px;
     text-align: center;
@@ -175,7 +170,7 @@ async function handleLogin() {
     width: 20px;
     height: 20px;
     border: 3px solid #f3f3f3;
-    border-top: 3px solid #1976d2;
+    border-top: 3px solid #667eea;
     border-radius: 50%;
     animation: spin 1s linear infinite;
     vertical-align: middle;
@@ -183,12 +178,12 @@ async function handleLogin() {
 }
 
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
 
-    100% {
-        transform: rotate(360deg);
-    }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
 }
 </style>
